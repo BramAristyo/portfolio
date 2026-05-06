@@ -55,23 +55,29 @@
                 <svg class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
             </button>
         </div>
-        <nav class="pointer-events-auto flex flex-col items-end gap-3">
-            <a href="#about" class="px-5 py-2 rounded-full border-thin bg-surface text-textMain text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.2em] hover:border-accent hover:text-accent transition-colors duration-300 shadow-sm">
-                About
-            </a>
-            <a href="#experience" class="px-5 py-2 rounded-full border-thin bg-surface text-textMain text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.2em] hover:border-accent hover:text-accent transition-colors duration-300 shadow-sm">
-                Experience
-            </a>
-            <a href="#index" class="px-5 py-2 rounded-full border-thin bg-surface text-textMain text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.2em] hover:border-accent hover:text-accent transition-colors duration-300 shadow-sm">
-                Work
-            </a>
-            <a href="#contact" class="px-5 py-2 rounded-full border-thin bg-surface text-textMain text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.2em] hover:border-accent hover:text-accent transition-colors duration-300 shadow-sm">
-                Contact
-            </a>
-            <a href="assets/Bram%20Aristyo%20-%20Back-End%20Developer%20-%20Resume.pdf" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-full border-thin bg-accent text-white text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.2em] hover:bg-surface hover:text-accent hover:border-accent transition-colors duration-300 shadow-sm">
-                Resume
-            </a>
-        </nav>
+        <div class="pointer-events-auto relative">
+            <button id="menu-toggle" class="px-5 py-2 rounded-full border-thin bg-surface text-textMain text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.2em] hover:border-accent hover:text-accent transition-colors duration-300 shadow-sm flex items-center gap-2">
+                Menu
+                <svg id="menu-icon" class="w-3 h-3 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <nav id="dropdown-menu" class="absolute top-full right-0 mt-3 flex flex-col items-end gap-3 opacity-0 pointer-events-none translate-y-[-10px] transition-all duration-300">
+                <a href="#about" class="px-5 py-2 rounded-full border-thin bg-surface text-textMain text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.2em] hover:border-accent hover:text-accent transition-colors duration-300 shadow-sm whitespace-nowrap">
+                    About
+                </a>
+                <a href="#experience" class="px-5 py-2 rounded-full border-thin bg-surface text-textMain text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.2em] hover:border-accent hover:text-accent transition-colors duration-300 shadow-sm whitespace-nowrap">
+                    Experience
+                </a>
+                <a href="#index" class="px-5 py-2 rounded-full border-thin bg-surface text-textMain text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.2em] hover:border-accent hover:text-accent transition-colors duration-300 shadow-sm whitespace-nowrap">
+                    Work
+                </a>
+                <a href="#contact" class="px-5 py-2 rounded-full border-thin bg-surface text-textMain text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.2em] hover:border-accent hover:text-accent transition-colors duration-300 shadow-sm whitespace-nowrap">
+                    Contact
+                </a>
+                <a href="assets/Bram%20Aristyo%20-%20Back-End%20Developer%20-%20Resume.pdf" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-full border-thin bg-accent text-white text-[0.65rem] md:text-xs font-bold uppercase tracking-[0.2em] hover:bg-surface hover:text-accent hover:border-accent transition-colors duration-300 shadow-sm whitespace-nowrap">
+                    Resume
+                </a>
+            </nav>
+        </div>
     </div>
 
     <!-- Main Architectural Grid Container -->
@@ -84,7 +90,7 @@
                     Backend<br>Engineer.
                 </h1>
                 <p class="text-xl md:text-3xl lg:text-4xl text-textMuted font-medium max-w-4xl leading-[1.2] tracking-tight uppercase">
-                    Hello, I am Bram Aristyo. I engineer high-performance server architectures and scalable data pipelines. Focusing on robust system design, optimized database queries, and radical simplicity in backend logic.
+                    Hello, I'm Bram Aristyo. I build solid backend systems, APIs, and everyday business tools. My focus is on writing maintainable code and solving real problems without overcomplicating things.
                 </p>
             </div>
             
@@ -315,9 +321,8 @@
                 </div>
             </div>
             
-            <div class="mt-32 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 text-[0.65rem] font-bold uppercase tracking-[0.2em] text-textMuted transition-colors duration-300">
+            <div class="mt-32 pt-8 border-t border-border flex justify-center items-center text-[0.65rem] font-bold uppercase tracking-[0.2em] text-textMuted transition-colors duration-300">
                 <span>&copy; 2026 B. Aristyo. All Rights Reserved.</span>
-                <span class="bg-surface px-4 py-2 rounded-full border-thin transition-colors duration-300">Built Minimal.</span>
             </div>
         </footer>
         
