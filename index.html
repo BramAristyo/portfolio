@@ -4,19 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bram Aristyo - Backend Engineer</title>
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Tailwind Configuration -->
     <script>
         tailwind.config = {
-            darkMode: 'class', // Enable class-based dark mode
+            darkMode: 'class',
             safelist: ['opacity-100', 'translate-y-0', 'pointer-events-auto', 'rotate-180'],
             theme: {
                 extend: {
@@ -37,7 +33,6 @@
         }
     </script>
 
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body class="font-sans antialiased min-h-screen">
@@ -81,13 +76,11 @@
         </div>
     </div>
 
-    <!-- Main Architectural Grid Container -->
     <main class="pt-32 pb-24 px-4 md:px-8 max-w-[1800px] mx-auto border-x border-border min-h-screen flex flex-col transition-colors duration-300">
         
-        <!-- Hero Section -->
         <section id="about" class="grid grid-cols-1 xl:grid-cols-12 gap-y-16 border-b border-border pb-16 md:pb-24 pt-8 md:pt-16 transition-colors duration-300">
             <div class="xl:col-span-8 xl:pr-16">
-                <h1 class="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-black leading-[0.85] tracking-tighter uppercase mb-12">
+                <h1 id="hero-title" data-text="Backend\nEngineer." class="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-black leading-[0.85] tracking-tighter uppercase mb-12 min-h-[1.7em]">
                     Backend<br>Engineer.
                 </h1>
                 <p class="text-xl md:text-3xl lg:text-4xl text-textMuted font-medium max-w-4xl leading-[1.2] tracking-tight uppercase">
@@ -95,10 +88,7 @@
                 </p>
             </div>
             
-            <!-- Bento Box Info Grid -->
             <div class="xl:col-span-4 grid grid-cols-2 gap-4 h-fit xl:border-l border-border xl:pl-12 transition-colors duration-300">
-                
-                <!-- Profile Image Box -->
                 <div class="col-span-2 border-thin group overflow-hidden relative h-56 sm:h-72 bg-surface">
                     <img src="assets/images/my.jpeg" alt="Bram Aristyo Profile" class="w-full h-full object-cover object-center grayscale group-hover:grayscale-0 transition-all duration-700 opacity-70 group-hover:opacity-100 mix-blend-luminosity group-hover:mix-blend-normal">
                     <div class="absolute bottom-4 left-4">
@@ -145,7 +135,6 @@
             </div>
         </section>
 
-        <!-- Experience Section -->
         <section id="experience" class="py-16 md:py-32 border-b border-border transition-colors duration-300">
             <div class="flex flex-col md:flex-row justify-between md:items-end mb-16 border-b border-border pb-6 gap-4 transition-colors duration-300">
                 <h2 class="text-sm font-bold uppercase tracking-[0.2em] text-textMuted">Experience Record</h2>
@@ -153,7 +142,6 @@
             </div>
             
             <div class="flex flex-col gap-12 md:gap-16">
-                <!-- Job 1 -->
                 <div class="grid grid-cols-1 xl:grid-cols-12 gap-6 xl:gap-16 group">
                     <div class="xl:col-span-3 flex flex-col">
                         <span class="text-sm font-mono text-textMuted mb-2">01/2025 &mdash; Present</span>
@@ -168,7 +156,6 @@
                     </div>
                 </div>
 
-                <!-- Job 2 -->
                 <div class="grid grid-cols-1 xl:grid-cols-12 gap-6 xl:gap-16 group">
                     <div class="xl:col-span-3 flex flex-col">
                         <span class="text-sm font-mono text-textMuted mb-2">09/2025 &mdash; Present</span>
@@ -185,7 +172,6 @@
                     </div>
                 </div>
 
-                <!-- Job 3 -->
                 <div class="grid grid-cols-1 xl:grid-cols-12 gap-6 xl:gap-16 group">
                     <div class="xl:col-span-3 flex flex-col">
                         <span class="text-sm font-mono text-textMuted mb-2">02/2025 &mdash; 07/2025</span>
@@ -201,7 +187,6 @@
                     </div>
                 </div>
 
-                <!-- Job 4 -->
                 <div class="grid grid-cols-1 xl:grid-cols-12 gap-6 xl:gap-16 group">
                     <div class="xl:col-span-3 flex flex-col">
                         <span class="text-sm font-mono text-textMuted mb-2">01/2025 &mdash; 02/2025</span>
@@ -218,7 +203,6 @@
             </div>
         </section>
 
-        <!-- Projects Index Section -->
         <section id="index" class="py-16 md:py-32 border-b border-border transition-colors duration-300">
             <div class="flex flex-col md:flex-row justify-between md:items-end mb-16 border-b border-border pb-6 gap-4 transition-colors duration-300">
                 <h2 class="text-sm font-bold uppercase tracking-[0.2em] text-textMuted">Project Index</h2>
@@ -226,7 +210,6 @@
             </div>
             
             <div class="flex flex-col">
-                <!-- Project 01 -->
                 <a href="https://github.com/bramAristyo" target="_blank" rel="noopener noreferrer" class="group block py-12 md:py-16 border-b border-border hover:bg-surface transition-all duration-300 px-4 md:px-8 -mx-4 md:-mx-8">
                     <div class="flex flex-col xl:flex-row xl:items-start gap-6 xl:gap-16">
                         <span class="text-sm font-mono text-textMuted w-12 hidden md:block mt-4">01.</span>
@@ -247,7 +230,6 @@
                     </div>
                 </a>
                 
-                <!-- Project 02 -->
                 <a href="https://github.com/bramAristyo" target="_blank" rel="noopener noreferrer" class="group block py-12 md:py-16 border-b border-border hover:bg-surface transition-all duration-300 px-4 md:px-8 -mx-4 md:-mx-8">
                     <div class="flex flex-col xl:flex-row xl:items-start gap-6 xl:gap-16">
                         <span class="text-sm font-mono text-textMuted w-12 hidden md:block mt-4">02.</span>
@@ -267,7 +249,6 @@
                     </div>
                 </a>
 
-                <!-- Project 03 -->
                 <div class="block py-12 md:py-16 px-4 md:px-8 -mx-4 md:-mx-8">
                     <div class="flex flex-col xl:flex-row xl:items-start gap-6 xl:gap-16">
                         <span class="text-sm font-mono text-textMuted w-12 hidden md:block mt-4">03.</span>
@@ -293,7 +274,6 @@
             </div>
         </section>
 
-        <!-- Footer / Contact -->
         <footer id="contact" class="pt-16 md:pt-32 mt-auto transition-colors duration-300">
             <div class="flex flex-col lg:flex-row justify-between items-start gap-16">
                 <div class="lg:w-1/2">
@@ -329,7 +309,6 @@
         
     </main>
     
-    <!-- Custom JS -->
     <script src="assets/js/scripts.js"></script>
 </body>
 </html>

@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggleBtn = document.getElementById('theme-toggle');
     const htmlEl = document.documentElement;
     
-    // Check local storage or system preference on load
     const currentTheme = localStorage.getItem('theme');
     const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -12,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
         htmlEl.classList.remove('dark');
     }
 
-    // Toggle theme on button click
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', () => {
             htmlEl.classList.toggle('dark');
@@ -24,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Dropdown Menu Logic
     const menuToggle = document.getElementById('menu-toggle');
     const dropdownMenu = document.getElementById('dropdown-menu');
     const menuIcon = document.getElementById('menu-icon');
@@ -35,19 +32,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const isClosed = dropdownMenu.classList.contains('opacity-0');
             
             if (isClosed) {
-                // Open menu
                 dropdownMenu.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-[-10px]');
                 dropdownMenu.classList.add('opacity-100', 'pointer-events-auto', 'translate-y-0');
                 menuIcon.classList.add('rotate-180');
             } else {
-                // Close menu
                 dropdownMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-[-10px]');
                 dropdownMenu.classList.remove('opacity-100', 'pointer-events-auto', 'translate-y-0');
                 menuIcon.classList.remove('rotate-180');
             }
         });
 
-        // Close when clicking outside
         document.addEventListener('click', (e) => {
             if (!dropdownMenu.classList.contains('opacity-0') && !dropdownMenu.contains(e.target) && e.target !== menuToggle) {
                 dropdownMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-[-10px]');
@@ -56,7 +50,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         
-        // Close when a link is clicked
         dropdownMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 dropdownMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-[-10px]');
@@ -64,5 +57,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 menuIcon.classList.remove('rotate-180');
             });
         });
+    }
+
+    const heroTitle = document.getElementById('hero-title');
+    if (heroTitle) {
+        const textToType = heroTitle.getAttribute('data-text');
+        if (textToType) {
+            heroTitle.innerHTML = '';
+            let i = 0;
+            let text = '';
+            
+            function typeWriter() {
+                if (i < textToType.length) {
+                    const char = textToType.charAt(i);
+                    if (char === '\\' && textToType.charAt(i+1) === 'n') {
+                        text += '<br>';
+                        i += 2;
+                    } else {
+                        text += char;
+                        i++;
+                    }
+                    
+                    heroTitle.innerHTML = text + '<span class="animate-pulse border-r-[0.1em] border-textMain ml-1 inline-block h-[0.85em] align-baseline"></span>';
+                    
+                    const speed = char === ' ' ? 200 : Math.random() * 100 + 50;
+                    setTimeout(typeWriter, speed);
+                } else {
+                    heroTitle.innerHTML = text;
+                }
+            }
+            
+            setTimeout(typeWriter, 500);
+        }
     }
 });
