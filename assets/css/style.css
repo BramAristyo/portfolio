@@ -19,33 +19,124 @@ html.dark {
     --color-accent: #ff5500;
 }
 
+html.retro {
+    /* Terminal / Retro Mode - Cyberpunk Neon */
+    --color-base: #020617;
+    --color-surface: #0f172a;
+    --color-border: #00ff41;
+    --color-text-main: #00ff41;
+    --color-text-muted: #059669;
+    --color-accent: #10b981;
+}
+
 /* Base styles */
 body {
     background-color: var(--color-base);
     color: var(--color-text-main);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1), color 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow-x: hidden;
 }
 
-/* Minimalist scrollbar */
-::-webkit-scrollbar {
-    width: 4px;
-}
-::-webkit-scrollbar-track {
-    background: var(--color-base);
-}
-::-webkit-scrollbar-thumb {
-    background: var(--color-border);
+/* Background Grid Effect */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(var(--color-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: -1;
 }
 
-::selection {
-    background-color: var(--color-accent);
-    color: #ffffff;
+html.retro body::before {
+    opacity: 0.1;
+    animation: grid-move 20s linear infinite;
 }
 
-/* Utilities */
+@keyframes grid-move {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(50px); }
+}
+
+/* Noise Texture Overlay */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: overlay;
+}
+
+/* Scroll Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered Items */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active .reveal-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Neon Glow for Retro Mode */
+html.retro .border-thin {
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.1);
+}
+
+html.retro h1, html.retro h2, html.retro h3 {
+    text-shadow: 0 0 15px rgba(0, 255, 65, 0.5);
+}
+
+/* Magnetic Glow Cursor */
+#cursor-glow {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(var(--color-accent-rgb), 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+    mix-blend-mode: screen;
+}
+
+:root {
+    --color-accent-rgb: 255, 85, 0;
+}
+html.dark { --color-accent-rgb: 255, 85, 0; }
+html.retro { --color-accent-rgb: 0, 255, 65; }
+
+/* Existing Border Utility */
 .border-thin {
     border-width: 1px;
     border-style: solid;
     border-color: var(--color-border);
-    transition: border-color 0.3s ease;
+    transition: border-color 0.5s ease;
 }

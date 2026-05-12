@@ -2,25 +2,63 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeToggleBtn = document.getElementById('theme-toggle');
     const htmlEl = document.documentElement;
     
-    const currentTheme = localStorage.getItem('theme');
-    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    // Theme Cycle: light -> dark -> retro
+    const themes = ['light', 'dark', 'retro'];
+    let currentThemeIndex = themes.indexOf(localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+    if (currentThemeIndex === -1) currentThemeIndex = 0;
 
-    if (currentTheme === 'dark' || (!currentTheme && systemDark)) {
-        htmlEl.classList.add('dark');
-    } else {
-        htmlEl.classList.remove('dark');
-    }
+    const applyTheme = (theme) => {
+        htmlEl.classList.remove('dark', 'retro');
+        if (theme !== 'light') {
+            htmlEl.classList.add(theme);
+        }
+        localStorage.setItem('theme', theme);
+    };
+
+    // Initial Apply
+    applyTheme(themes[currentThemeIndex]);
 
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', () => {
-            htmlEl.classList.toggle('dark');
-            if (htmlEl.classList.contains('dark')) {
-                localStorage.setItem('theme', 'dark');
-            } else {
-                localStorage.setItem('theme', 'light');
-            }
+            currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+            applyTheme(themes[currentThemeIndex]);
         });
     }
+
+    // Scroll Reveal Intersection Observer
+    const revealOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, revealOptions);
+
+    document.querySelectorAll('.reveal').forEach(el => {
+        revealObserver.observe(el);
+        
+        // Stagger children if they have reveal-item class
+        const items = el.querySelectorAll('.reveal-item');
+        items.forEach((item, index) => {
+            item.style.transitionDelay = `${index * 0.1}s`;
+        });
+    });
+
+    // Cursor Glow Effect
+    const cursorGlow = document.createElement('div');
+    cursorGlow.id = 'cursor-glow';
+    document.body.appendChild(cursorGlow);
+
+    document.addEventListener('mousemove', (e) => {
+        cursorGlow.style.left = e.clientX + 'px';
+        cursorGlow.style.top = e.clientY + 'px';
+    });
 
     const menuToggle = document.getElementById('menu-toggle');
     const dropdownMenu = document.getElementById('dropdown-menu');
