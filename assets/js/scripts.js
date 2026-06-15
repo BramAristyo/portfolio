@@ -1,24 +1,41 @@
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggleBtn = document.getElementById('theme-toggle');
     const htmlEl = document.documentElement;
-    
-    const currentTheme = localStorage.getItem('theme');
-    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const iconSun = document.getElementById('icon-sun');
+    const iconMoon = document.getElementById('icon-moon');
+    const iconLeaf = document.getElementById('icon-leaf');
 
-    if (currentTheme === 'dark' || (!currentTheme && systemDark)) {
-        htmlEl.classList.add('dark');
-    } else {
-        htmlEl.classList.remove('dark');
+    const THEMES = ['light', 'dark', 'ghibli'];
+    const icons = { light: iconMoon, dark: iconLeaf, ghibli: iconSun };
+
+    function applyTheme(theme) {
+        htmlEl.classList.remove('dark', 'ghibli');
+
+        if (theme === 'dark') {
+            htmlEl.classList.add('dark');
+        } else if (theme === 'ghibli') {
+            htmlEl.classList.add('ghibli');
+        }
+
+        Object.values(icons).forEach(el => { if (el) el.classList.add('hidden'); });
+        const icon = icons[theme];
+        if (icon) icon.classList.remove('hidden');
+
+        localStorage.setItem('theme', theme);
     }
+
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const initialTheme = saved || (prefersDark ? 'dark' : 'light');
+    applyTheme(initialTheme);
 
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', () => {
-            htmlEl.classList.toggle('dark');
-            if (htmlEl.classList.contains('dark')) {
-                localStorage.setItem('theme', 'dark');
-            } else {
-                localStorage.setItem('theme', 'light');
-            }
+            const current = localStorage.getItem('theme') || 'light';
+            const idx = THEMES.indexOf(current);
+            if (idx === -1) return;
+            const next = THEMES[(idx + 1) % THEMES.length];
+            applyTheme(next);
         });
     }
 

@@ -100,11 +100,10 @@
                 </a>
             </h1>
             <!-- Theme Toggle Button -->
-            <button id="theme-toggle" class="p-2 md:p-2.5 rounded-full border-thin bg-surface text-textMain hover:border-accent hover:text-accent transition-colors duration-300 shadow-sm" aria-label="Toggle Dark Mode">
-                <!-- Moon icon for light mode (switches to dark) -->
-                <svg class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
-                <!-- Sun icon for dark mode (switches to light) -->
-                <svg class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+            <button id="theme-toggle" class="p-2 md:p-2.5 rounded-full border-thin bg-surface text-textMain hover:border-accent hover:text-accent transition-colors duration-300 shadow-sm" aria-label="Cycle theme">
+                <svg id="icon-sun" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                <svg id="icon-moon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                <svg id="icon-leaf" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"></path></svg>
             </button>
         </div>
         <div class="pointer-events-auto relative">
@@ -200,78 +199,78 @@
                 <span class="text-sm font-mono text-textMuted">[2025 &mdash; Present]</span>
             </div>
             
-            <div class="flex flex-col">
-                <div class="reveal-item grid grid-cols-1 xl:grid-cols-12 gap-2 xl:gap-4 xl:items-baseline py-5 border-b border-thin group hover:bg-surface/30 transition-colors duration-300 px-4 -mx-4 border-l-2 border-transparent hover:border-accent">
-                    <div class="xl:col-span-2">
-                        <span class="text-xs font-mono text-textMuted group-hover:text-accent transition-colors duration-300">06/2026 &mdash; Present</span>
-                    </div>
-                    <div class="xl:col-span-4">
-                        <h3 class="text-base md:text-lg font-black uppercase tracking-tight text-textMain group-hover:text-accent transition-colors duration-300">Golang Backend Developer</h3>
-                        <p class="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-textMuted/70">Adya Artha Abadi</p>
-                    </div>
-                    <div class="xl:col-span-6 flex flex-wrap gap-1.5 xl:justify-end mt-2 xl:mt-0">
-                        <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">Golang</span>
-                    </div>
-                </div>
-
-                <div class="reveal-item grid grid-cols-1 xl:grid-cols-12 gap-2 xl:gap-4 xl:items-baseline py-5 border-b border-thin group hover:bg-surface/30 transition-colors duration-300 px-4 -mx-4 border-l-2 border-transparent hover:border-accent">
-                    <div class="xl:col-span-2">
-                        <span class="text-xs font-mono text-textMuted group-hover:text-accent transition-colors duration-300">01/2025 &mdash; Lifetime</span>
-                    </div>
-                    <div class="xl:col-span-4">
-                        <h3 class="text-base md:text-lg font-black uppercase tracking-tight text-textMain group-hover:text-accent transition-colors duration-300">Indie Software Engineer</h3>
-                        <p class="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-textMuted/70">Freelance / Independent</p>
-                    </div>
-                    <div class="xl:col-span-6 flex flex-wrap gap-1.5 xl:justify-end mt-2 xl:mt-0">
-                        <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">Golang</span>
-                        <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">Vue.js</span>
+            <div class="flex flex-col gap-5">
+                <div class="reveal-item group hover:bg-surface/30 transition-colors duration-300 rounded-lg px-4 py-4 -mx-4">
+                    <div class="flex flex-col xl:flex-row xl:items-baseline gap-1 xl:gap-4">
+                        <span class="text-xs font-mono text-textMuted shrink-0 xl:w-[9rem] group-hover:text-accent transition-colors duration-300">06/2026 &mdash; Present</span>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="text-base md:text-lg font-black uppercase tracking-tight text-textMain group-hover:text-accent transition-colors duration-300">Golang Backend Developer</h3>
+                            <p class="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-textMuted/70">Adya Artha Abadi</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mt-1 xl:mt-0">
+                            <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">Golang</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="reveal-item grid grid-cols-1 xl:grid-cols-12 gap-2 xl:gap-4 xl:items-baseline py-5 border-b border-thin group hover:bg-surface/30 transition-colors duration-300 px-4 -mx-4 border-l-2 border-transparent hover:border-accent">
-                    <div class="xl:col-span-2">
-                        <span class="text-xs font-mono text-textMuted group-hover:text-accent transition-colors duration-300">09/2025 &mdash; 10/2026</span>
-                    </div>
-                    <div class="xl:col-span-4">
-                        <h3 class="text-base md:text-lg font-black uppercase tracking-tight text-textMain group-hover:text-accent transition-colors duration-300">Software Developer Intern</h3>
-                        <p class="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-textMuted/70">Nayati Indonesia</p>
-                    </div>
-                    <div class="xl:col-span-6 flex flex-wrap gap-1.5 xl:justify-end mt-2 xl:mt-0">
-                        <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">Golang</span>
-                        <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">Laravel</span>
-                        <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">PHP</span>
-                        <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">Docker</span>
-                        <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">GitLab CI</span>
-                        <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">VM</span>
+                <div class="reveal-item group hover:bg-surface/30 transition-colors duration-300 rounded-lg px-4 py-4 -mx-4">
+                    <div class="flex flex-col xl:flex-row xl:items-baseline gap-1 xl:gap-4">
+                        <span class="text-xs font-mono text-textMuted shrink-0 xl:w-[9rem] group-hover:text-accent transition-colors duration-300">01/2025 &mdash; Lifetime</span>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="text-base md:text-lg font-black uppercase tracking-tight text-textMain group-hover:text-accent transition-colors duration-300">Indie Software Engineer</h3>
+                            <p class="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-textMuted/70">Freelance / Independent</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mt-1 xl:mt-0">
+                            <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">Golang</span>
+                            <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">Vue.js</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="reveal-item grid grid-cols-1 xl:grid-cols-12 gap-2 xl:gap-4 xl:items-baseline py-5 border-b border-thin group hover:bg-surface/30 transition-colors duration-300 px-4 -mx-4 border-l-2 border-transparent hover:border-accent">
-                    <div class="xl:col-span-2">
-                        <span class="text-xs font-mono text-textMuted group-hover:text-accent transition-colors duration-300">02/2025 &mdash; 07/2025</span>
-                    </div>
-                    <div class="xl:col-span-4">
-                        <h3 class="text-base md:text-lg font-black uppercase tracking-tight text-textMain group-hover:text-accent transition-colors duration-300">Backend Dev &amp; Coding Mentor</h3>
-                        <p class="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-textMuted/70">Bengkel Koding @Udinus</p>
-                    </div>
-                    <div class="xl:col-span-6 flex flex-wrap gap-1.5 xl:justify-end mt-2 xl:mt-0">
-                        <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">Laravel</span>
-                        <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">PHP</span>
-                        <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">MySQL</span>
+                <div class="reveal-item group hover:bg-surface/30 transition-colors duration-300 rounded-lg px-4 py-4 -mx-4">
+                    <div class="flex flex-col xl:flex-row xl:items-baseline gap-1 xl:gap-4">
+                        <span class="text-xs font-mono text-textMuted shrink-0 xl:w-[9rem] group-hover:text-accent transition-colors duration-300">09/2025 &mdash; 10/2026</span>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="text-base md:text-lg font-black uppercase tracking-tight text-textMain group-hover:text-accent transition-colors duration-300">Software Developer Intern</h3>
+                            <p class="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-textMuted/70">Nayati Indonesia</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mt-1 xl:mt-0">
+                            <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">Golang</span>
+                            <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">Laravel</span>
+                            <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">PHP</span>
+                            <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">Docker</span>
+                            <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">GitLab CI</span>
+                            <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">VM</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="reveal-item grid grid-cols-1 xl:grid-cols-12 gap-2 xl:gap-4 xl:items-baseline py-5 group hover:bg-surface/30 transition-colors duration-300 px-4 -mx-4 border-l-2 border-transparent hover:border-accent">
-                    <div class="xl:col-span-2">
-                        <span class="text-xs font-mono text-textMuted group-hover:text-accent transition-colors duration-300">01/2025 &mdash; 02/2025</span>
+                <div class="reveal-item group hover:bg-surface/30 transition-colors duration-300 rounded-lg px-4 py-4 -mx-4">
+                    <div class="flex flex-col xl:flex-row xl:items-baseline gap-1 xl:gap-4">
+                        <span class="text-xs font-mono text-textMuted shrink-0 xl:w-[9rem] group-hover:text-accent transition-colors duration-300">02/2025 &mdash; 07/2025</span>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="text-base md:text-lg font-black uppercase tracking-tight text-textMain group-hover:text-accent transition-colors duration-300">Backend Dev &amp; Coding Mentor</h3>
+                            <p class="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-textMuted/70">Bengkel Koding @Udinus</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mt-1 xl:mt-0">
+                            <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">Laravel</span>
+                            <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">PHP</span>
+                            <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">MySQL</span>
+                        </div>
                     </div>
-                    <div class="xl:col-span-4">
-                        <h3 class="text-base md:text-lg font-black uppercase tracking-tight text-textMain group-hover:text-accent transition-colors duration-300">Backend Developer Intern</h3>
-                        <p class="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-textMuted/70">Phicos Group</p>
-                    </div>
-                    <div class="xl:col-span-6 flex flex-wrap gap-1.5 xl:justify-end mt-2 xl:mt-0">
-                        <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">PHP</span>
-                        <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">FastAPI</span>
+                </div>
+
+                <div class="reveal-item group hover:bg-surface/30 transition-colors duration-300 rounded-lg px-4 py-4 -mx-4">
+                    <div class="flex flex-col xl:flex-row xl:items-baseline gap-1 xl:gap-4">
+                        <span class="text-xs font-mono text-textMuted shrink-0 xl:w-[9rem] group-hover:text-accent transition-colors duration-300">01/2025 &mdash; 02/2025</span>
+                        <div class="flex-1 min-w-0">
+                            <h3 class="text-base md:text-lg font-black uppercase tracking-tight text-textMain group-hover:text-accent transition-colors duration-300">Backend Developer Intern</h3>
+                            <p class="text-[0.6rem] font-bold uppercase tracking-[0.2em] text-textMuted/70">Phicos Group</p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mt-1 xl:mt-0">
+                            <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">PHP</span>
+                            <span class="px-3 py-1 rounded-full border-thin text-[0.55rem] font-bold uppercase tracking-widest text-textMuted/80 group-hover:text-accent group-hover:border-accent/50 transition-colors duration-300">FastAPI</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -369,7 +368,7 @@
                     <!-- Archive Item 1: Pleninvest -->
                     <article class="reveal-item group grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 py-4 md:py-6 border-b border-thin hover:bg-surface transition-colors duration-300 px-4 md:px-8 -mx-4 md:-mx-8 items-center">
                         <div class="md:col-span-1 text-xs font-mono text-textMuted">2026</div>
-                        <div class="md:col-span-3 font-bold text-base md:text-lg tracking-tight uppercase text-black dark:text-white group-hover:text-accent transition-colors duration-300">Pleninvest</div>
+                        <div class="md:col-span-3 font-bold text-base md:text-lg tracking-tight uppercase text-textMain group-hover:text-accent transition-colors duration-300">Pleninvest</div>
                         <div class="md:col-span-3 text-xs text-textMuted uppercase tracking-widest hidden md:block">Money tracking application.</div>
                         <div class="md:col-span-3 flex flex-wrap gap-2 text-[0.6rem] font-bold text-textMuted uppercase tracking-widest mt-1 md:mt-0">
                             <span>Laravel</span> &middot; <span>Vanilla JS</span>
@@ -383,7 +382,7 @@
                     <!-- Archive Item 2: IT Inventory Audit -->
                     <article class="reveal-item group grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 py-4 md:py-6 border-b border-thin hover:bg-surface transition-colors duration-300 px-4 md:px-8 -mx-4 md:-mx-8 items-center">
                         <div class="md:col-span-1 text-xs font-mono text-textMuted">2026</div>
-                        <div class="md:col-span-3 font-bold text-base md:text-lg tracking-tight uppercase text-black dark:text-white group-hover:text-accent transition-colors duration-300">IT Inventory Audit</div>
+                        <div class="md:col-span-3 font-bold text-base md:text-lg tracking-tight uppercase text-textMain group-hover:text-accent transition-colors duration-300">IT Inventory Audit</div>
                         <div class="md:col-span-3 text-xs text-textMuted uppercase tracking-widest hidden md:block">Nayati hardware inventory auditing script.</div>
                         <div class="md:col-span-3 flex flex-wrap gap-2 text-[0.6rem] font-bold text-textMuted uppercase tracking-widest mt-1 md:mt-0">
                             <span>Go</span> &middot; <span>MySQL</span>
@@ -396,7 +395,7 @@
                     <!-- Archive Item 3: Dropbox Syncer -->
                     <article class="reveal-item group grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 py-4 md:py-6 border-b border-thin hover:bg-surface transition-colors duration-300 px-4 md:px-8 -mx-4 md:-mx-8 items-center">
                         <div class="md:col-span-1 text-xs font-mono text-textMuted">2026</div>
-                        <div class="md:col-span-3 font-bold text-base md:text-lg tracking-tight uppercase text-black dark:text-white group-hover:text-accent transition-colors duration-300">Dropbox Syncer</div>
+                        <div class="md:col-span-3 font-bold text-base md:text-lg tracking-tight uppercase text-textMain group-hover:text-accent transition-colors duration-300">Dropbox Syncer</div>
                         <div class="md:col-span-3 text-xs text-textMuted uppercase tracking-widest hidden md:block">Automated Dropbox to Ubuntu sync.</div>
                         <div class="md:col-span-3 flex flex-wrap gap-2 text-[0.6rem] font-bold text-textMuted uppercase tracking-widest mt-1 md:mt-0">
                             <span>Go</span> &middot; <span>Ubuntu</span>
@@ -410,7 +409,7 @@
                     <!-- Archive Item 4: ComSci Internship System -->
                     <article class="reveal-item group grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 py-4 md:py-6 border-b border-thin hover:bg-surface transition-colors duration-300 px-4 md:px-8 -mx-4 md:-mx-8 items-center">
                         <div class="md:col-span-1 text-xs font-mono text-textMuted">2025</div>
-                        <div class="md:col-span-3 font-bold text-base md:text-lg tracking-tight uppercase text-black dark:text-white group-hover:text-accent transition-colors duration-300">TI Udinus Internship System</div>
+                        <div class="md:col-span-3 font-bold text-base md:text-lg tracking-tight uppercase text-textMain group-hover:text-accent transition-colors duration-300">TI Udinus Internship System</div>
                         <div class="md:col-span-3 text-xs text-textMuted uppercase tracking-widest hidden md:block">Core API for student portal.</div>
                         <div class="md:col-span-3 flex flex-wrap gap-2 text-[0.6rem] font-bold text-textMuted uppercase tracking-widest mt-1 md:mt-0">
                             <span>Laravel API</span> &middot; <span>MySQL</span> &middot; <span>Postman</span>
@@ -424,7 +423,7 @@
                     <!-- Archive Item 5: Socket Programming -->
                     <article class="reveal-item group grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 py-4 md:py-6 border-b border-thin hover:bg-surface transition-colors duration-300 px-4 md:px-8 -mx-4 md:-mx-8 items-center">
                         <div class="md:col-span-1 text-xs font-mono text-textMuted">2024</div>
-                        <div class="md:col-span-3 font-bold text-base md:text-lg tracking-tight uppercase text-black dark:text-white group-hover:text-accent transition-colors duration-300">Socket Programming</div>
+                        <div class="md:col-span-3 font-bold text-base md:text-lg tracking-tight uppercase text-textMain group-hover:text-accent transition-colors duration-300">Socket Programming</div>
                         <div class="md:col-span-3 text-xs text-textMuted uppercase tracking-widest hidden md:block">Simple end-to-end socket communication.</div>
                         <div class="md:col-span-3 flex flex-wrap gap-2 text-[0.6rem] font-bold text-textMuted uppercase tracking-widest mt-1 md:mt-0">
                             <span>C++</span>

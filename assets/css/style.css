@@ -19,6 +19,15 @@ html.dark {
     --color-accent: #ff5500;
 }
 
+html.ghibli {
+    --color-base: #1a2e14;
+    --color-surface: #243d1d;
+    --color-border: #3d5a32;
+    --color-text-main: #e8f0dc;
+    --color-text-muted: #8aa87a;
+    --color-accent: #e8845a;
+}
+
 /* Base styles */
 body {
     background-color: var(--color-base);
