@@ -8,7 +8,7 @@ Live: [cameliawhite.my.id](https://cameliawhite.my.id/)
 
 ## About
 
-Minimalist brutalist portfolio for Bram Aristyo — Backend Engineer based in Semarang, Indonesia. Covers work experience, featured projects, and a compact project archive.
+Minimalist brutalist portfolio for Bram Aristyo — Backend Engineer based in Tangerang, Indonesia. Covers work experience, featured projects, and a compact project archive.
 
 ---
 
@@ -46,7 +46,7 @@ portfolio/
 ## Sections
 
 - **About** — role, location, availability status, primary stack
-- **Experience** — work history (Nayati Indonesia, Bengkel Koding, Phicos Group, indie)
+- **Experience** — work history (Adya Artha Abadi, Nayati Indonesia, Bengkel Koding, Phicos Group, indie)
 - **Project Index** — featured projects (Cloud POS, ERP Nayati, RAG Pipeline)
 - **Project Archive** — compact log of additional work (Pleninvest, IT Inventory Audit, Dropbox Syncer, TI Udinus Internship System, Socket Programming)
 - **Contact** — email, GitHub, LinkedIn, resume PDF
